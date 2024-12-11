@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use App\Enums\TodoStatus;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Enum;
+use Illuminate\Validation\Rule;
 
 class StoreTodoRequest extends FormRequest
 {
@@ -18,7 +19,7 @@ class StoreTodoRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:255'],
             'details' => ['required', 'string'],
-            'status' => ['sometimes', 'required', new Enum(TodoStatus::class)],
+            'status' => ['sometimes', Rule::enum(TodoStatus::class)],
         ];
     }
 }

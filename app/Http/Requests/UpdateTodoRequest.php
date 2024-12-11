@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use App\Enums\TodoStatus;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Enum;
+use Illuminate\Validation\Rule;
 
 class UpdateTodoRequest extends FormRequest
 {
